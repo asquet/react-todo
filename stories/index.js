@@ -9,7 +9,7 @@ storiesOf('Welcome', module)
     <Welcome showApp={linkTo('Button')}/>
   ));
 
-const req = require.context('./stories', true, /.stories.js$/);
+const req = require.context('./stories', true, /.stories.jsx?$/);
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename))
