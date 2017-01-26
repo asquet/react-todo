@@ -1,3 +1,6 @@
 {
-  "presets": [["latest", { "modules": false }], "stage-2", "react"]
+  "presets": [["latest", { "modules": false }], "stage-2", "react"],
+  "plugins": [
+    "react-hot-loader/babel" // Enables React code to work with HMR.
+  ]
 }

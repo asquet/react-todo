@@ -13,7 +13,7 @@ module.exports = function (env) {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity,
-      filename: 'vendor.[hash].js',
+      filename: 'vendor.js',
     }),
     new webpack.DefinePlugin({
       'process.env': { NODE_ENV: JSON.stringify(nodeEnv) },
@@ -50,21 +50,21 @@ module.exports = function (env) {
       })
     );
   } else {
-    plugins.push(
-      new webpack.HotModuleReplacementPlugin()
-    );
+    // plugins.push(
+    //   new webpack.HotModuleReplacementPlugin()
+    // );
   }
 
   return {
     devtool: isProd ? 'source-map' : 'eval',
     context: sourcePath,
     entry: {
-      js: './index.jsx',
-      vendor: ['react', 'react-dom'],
+      js: ['./index.jsx'],
+      vendor: ['react', 'react-dom', 'redux', 'react-redux'],
     },
     output: {
       path: staticsPath,
-      filename: '[name].[hash].js',
+      filename: '[name].js',
     },
     module: {
       rules: [
@@ -92,5 +92,13 @@ module.exports = function (env) {
 
     plugins,
 
+    devServer: {
+      contentBase: path.join(__dirname, '../build'),
+      historyApiFallback: true,
+      compress: false,
+      hot: true,
+      inline: true,
+      headers: { 'Access-Control-Allow-Origin': '*' }
+    }
   };
 };

@@ -8,36 +8,29 @@ const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('./webpack.config');
 const path = require('path');
 
+const PORT = 3000;
+
 // always dev enviroment when running webpack dev server
 const env = { dev: process.env.NODE_ENV };
 const devServerConfig = {
   contentBase: path.join(__dirname, '../build'),
-  // Need historyApiFallback to be able to refresh on dynamic route
   historyApiFallback: true,
-  port: 3000,
   compress: false,
-  inline: true,
   hot: true,
-  stats: {
-    assets: true,
-    children: false,
-    chunks: false,
-    hash: false,
-    modules: false,
-    publicPath: false,
-    timings: true,
-    version: false,
-    warnings: true,
-
-  }
+  inline: true,
+  headers: { 'Access-Control-Allow-Origin': '*' }
 };
+
+const cfg = webpackConfig(env);
+cfg.entry.js.unshift(`webpack-dev-server/client?http://localhost:${PORT}/`);
+cfg.entry.js.unshift('webpack/hot/dev-server');
+
 
 /**
  * Creating the server to listen to. We are passing in our webpack config
  * that we will setup at webpack/webpack.config.js. We are also passing in
  * the server configuration object that we created above.
  */
-const server = new WebpackDevServer(webpack(webpackConfig(env)), devServerConfig);
+const server = new WebpackDevServer(webpack(cfg), devServerConfig);
 
-// will be live at http://localhost:3000/
-server.listen(3000, 'localhost');
+server.listen(PORT, 'localhost');

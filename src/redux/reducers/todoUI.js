@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { VISIBILITY_FILTER_VALUES } from '../model/Todo';
-import { SET_FILTER, SET_FORM_VISIBLE, SET_FORM_TEXT } from './todoUI.actions';
+import { VISIBILITY_FILTER_VALUES } from '../../model/Todo';
+import { SET_FILTER, SET_FORM_VISIBLE, SET_FORM_TEXT } from '../todoUI.actions';
 
 function visibilityFilter(state = VISIBILITY_FILTER_VALUES.NOT_DONE, action) {
   switch (action.type) {

@@ -1,5 +1,5 @@
-import { CREATE_TODO, UPDATE_TODO } from './todoList.actions';
-import { todoSeq } from '../model/Todo';
+import { CREATE_TODO, UPDATE_TODO } from '../todoList.actions';
+import { todoSeq } from '../../model/Todo';
 
 export default function todoList(state = [], action) {
   switch (action.type) {
