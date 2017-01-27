@@ -12,7 +12,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const BASE = {
   context: sourcePath,
   entry: {
-    //vendor: ['react', 'react-dom', 'redux', 'react-redux'],
+    vendor: ['react', 'react-dom', 'redux', 'react-redux'],
   },
   output: {
     path: staticsPath,
