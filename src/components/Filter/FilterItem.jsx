@@ -1,18 +1,21 @@
 import React from 'react';
+import './FilterItem.css'
 
 function FilterItem({ value, onChange, selected, children }) {
   const htmlFor = `filter-${value}`;
   return (
-    <label htmlFor={htmlFor}>
-      <input
-        type="radio"
-        id={htmlFor}
-        value={value}
-        onChange={() => onChange(value)}
-        checked={selected === value}
-      />
-      {children}
-    </label>
+    <div className="FilterItem">
+      <label htmlFor={htmlFor}>
+        <input
+          type="radio"
+          id={htmlFor}
+          value={value}
+          onChange={() => onChange(value)}
+          checked={selected === value}
+        />
+        {children}
+      </label>
+    </div>
   );
 }
 

@@ -1,43 +1,52 @@
 import React from 'react';
 
-function TodoForm({ onSave, onTextChange, onCancel, formText }) {
-  return (
-    <form
-      onSubmit={(ev) => {
-        ev.preventDefault();
-        onSave(formText);
-      }}
-      className=""
-    >
-      <div className="form-group">
-        <label htmlFor="todoTextInput">Todo text</label>
-        <input
-          className="form-control"
-          type="text"
-          id="todoTextInput"
-          value={formText}
-          onChange={(ev) => {
-            ev.preventDefault();
-            onTextChange(ev.target.value);
-          }}
-        />
-      </div>
-      <div>
+class TodoForm extends React.Component {
+
+  componentDidMount() {
+    this.todoInput.focus();
+  }
+
+  render() {
+    return (
+      <form
+        onSubmit={(ev) => {
+          ev.preventDefault();
+          this.props.onSave(this.props.formText);
+          this.props.onTextChange('');
+        }}
+      >
+        <div className="form-group">
+          <label htmlFor="todoTextInput">Todo text</label>
+          <input
+            className="form-control"
+            type="text"
+            id="todoTextInput"
+            value={this.props.formText}
+            ref={(input) => {
+              this.todoInput = input;
+            }}
+            onChange={(ev) => {
+              ev.preventDefault();
+              this.props.onTextChange(ev.target.value);
+            }}
+          />
+        </div>
         <button type="submit" className="btn btn-primary">Save</button>
         <button
           onClick={(ev) => {
             ev.preventDefault();
-            onTextChange('');
-            onCancel();
+            this.props.onTextChange('');
+            this.props.onCancel();
           }}
           className="btn btn-default"
         >
           Cancel
         </button>
-      </div>
-    </form>
-  );
+      </form>
+    );
+  }
 }
+
 
 TodoForm.propTypes = {
   onCancel: React.PropTypes.func.isRequired,

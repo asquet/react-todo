@@ -1,12 +1,8 @@
-.todoItem {
+.TodoItem {
   text-align: left;
 }
 
-.todoItem-text {
-  padding-left: 15px;
+.TodoItem-text {
   font-weight: normal;
-  float: right;
-  padding-right: 10px;
-  margin-right: -20px;
   width: 100%;
 }

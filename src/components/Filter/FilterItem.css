@@ -1,0 +1,8 @@
+.FilterItem {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.FilterItem input {
+  margin-right: 5px;
+}

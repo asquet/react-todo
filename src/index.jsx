@@ -1,23 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
+import App from './components/App/App';
+import configureStore from './redux/store';
 import './index.css';
 
-import ReduxApp from './components/App/ReduxApp';
+const store = configureStore(window.__data);
 
-const render = (Component) => {
+const render = () => {
   ReactDOM.render(
     <AppContainer>
-      <Component />
+      <Provider store={store} key="provider">
+        <App />
+      </Provider>
     </AppContainer>,
     document.getElementById('root')// eslint-disable-line
   );
 };
 
-render(ReduxApp);
+render();
 
 if (module.hot) {
-  module.hot.accept('./components/App/ReduxApp', () => {
-    render(ReduxApp);
-  });
+  module.hot.accept('./components/App/App', render);
 }

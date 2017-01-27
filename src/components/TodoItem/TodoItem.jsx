@@ -5,8 +5,8 @@ import { TodoShape } from '../../model/Todo';
 function TodoItem({ item, onChange }) {
   const htmlId = `todoCheckBox-${item.id}`;
   return (
-    <div className="todoItem panel panel-default">
-      <div className="panel-body">
+    <div className="TodoItem panel panel-default">
+      <div className="checkbox panel-body">
         <label htmlFor={htmlId}>
           <input
             id={htmlId}
@@ -14,7 +14,7 @@ function TodoItem({ item, onChange }) {
             checked={item.isDone}
             onChange={() => onChange(item.id, !item.isDone)}
           />
-          <span className="todoItem-text">{item.text}</span>
+          <span className="TodoItem-text">{item.text}</span>
         </label>
       </div>
     </div>
