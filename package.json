@@ -35,7 +35,6 @@
     "eslint-plugin-react": "^6.9.0",
     "html-webpack-plugin": "^2.24.1",
     "jest": "^18.0.0",
-    "react-hot-loader": "^3.0.0-beta.6",
     "react-test-renderer": "^15.4.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.0",
@@ -43,6 +42,7 @@
     "webpack-merge": "^2.0.0"
   },
   "dependencies": {
+    "react-hot-loader": "^3.0.0-beta.6",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.1",

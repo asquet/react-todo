@@ -1,22 +1,17 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
-import TodoFilterContainer from '../Filter/TodoFilterContainer';
-import TodoEditContainer from '../TodoEditBlock/TodoEditContainer';
-import TodoVisibleListContainer from '../TodoList/TodoVisibleListContainer';
+import Root from './Root';
+import configureStore from '../../redux/store';
+
+const store = configureStore();
 
 export default function App() {
   return (
-    <div className="App">
-      <div className="page-header">
-        <h1>Todo app on React</h1>
+    <Provider store={store} key="provider">
+      <div className="App">
+        <Root />
       </div>
-      <TodoFilterContainer />
-      <TodoVisibleListContainer />
-      <div className="navbar navbar-default navbar-fixed-bottom">
-        <div className="navbar-form">
-          <TodoEditContainer />
-        </div>
-      </div>
-    </div>
+    </Provider>
   );
 }
