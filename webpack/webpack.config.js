@@ -50,9 +50,12 @@ module.exports = function (env) {
       })
     );
   } else {
-    // plugins.push(
-    //   new webpack.HotModuleReplacementPlugin()
-    // );
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin()
+    );
+    plugins.push(
+      new webpack.NamedModulesPlugin()
+    );
   }
 
   return {
@@ -65,6 +68,7 @@ module.exports = function (env) {
     output: {
       path: staticsPath,
       filename: '[name].js',
+      publicPath: '/',
     },
     module: {
       rules: [

@@ -1,11 +1,12 @@
 import React from 'react';
 
 function FilterItem({ value, onChange, selected, children }) {
+  const htmlFor = `filter-${value}`;
   return (
-    <label htmlFor={`filter-${value}`}>
+    <label htmlFor={htmlFor}>
       <input
         type="radio"
-        id={`filter-${value}`}
+        id={htmlFor}
         value={value}
         onChange={() => onChange(value)}
         checked={selected === value}

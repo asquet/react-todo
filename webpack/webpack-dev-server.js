@@ -14,6 +14,7 @@ const PORT = 3000;
 const env = { dev: process.env.NODE_ENV };
 const devServerConfig = {
   contentBase: path.join(__dirname, '../build'),
+  publicPath: '/',
   historyApiFallback: true,
   compress: false,
   hot: true,
@@ -22,8 +23,10 @@ const devServerConfig = {
 };
 
 const cfg = webpackConfig(env);
+
 cfg.entry.js.unshift(`webpack-dev-server/client?http://localhost:${PORT}/`);
-cfg.entry.js.unshift('webpack/hot/dev-server');
+cfg.entry.js.unshift('webpack/hot/only-dev-server');
+cfg.entry.js.unshift('react-hot-loader/patch');
 
 
 /**
