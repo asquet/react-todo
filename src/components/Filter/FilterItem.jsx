@@ -1,5 +1,5 @@
 import React from 'react';
-import './FilterItem.css'
+import './FilterItem.css';
 
 function FilterItem({ value, onChange, selected, children }) {
   const htmlFor = `filter-${value}`;
