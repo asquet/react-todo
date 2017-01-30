@@ -1,0 +1,17 @@
+.TodoForm {
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.TodoForm input.TodoForm-textInput {
+  width: 400px;
+}
+
+@media (max-width: 767px) {
+  .TodoForm input.TodoForm-textInput {
+    box-sizing: border-box;
+    margin: auto;
+    width: 100%;
+  }
+}

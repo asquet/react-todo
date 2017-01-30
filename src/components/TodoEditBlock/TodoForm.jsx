@@ -1,4 +1,5 @@
 import React from 'react';
+import './TodoForm.css';
 
 class TodoForm extends React.Component {
 
@@ -14,11 +15,13 @@ class TodoForm extends React.Component {
           this.props.onSave(this.props.formText);
           this.props.onTextChange('');
         }}
+        className="TodoForm"
       >
         <div className="form-group">
           <label htmlFor="todoTextInput">Todo text</label>
+          {' '}
           <input
-            className="form-control"
+            className="form-control TodoForm-textInput"
             type="text"
             id="todoTextInput"
             value={this.props.formText}
@@ -31,7 +34,9 @@ class TodoForm extends React.Component {
             }}
           />
         </div>
+        {' '}
         <button type="submit" className="btn btn-primary">Save</button>
+        {' '}
         <button
           onClick={(ev) => {
             ev.preventDefault();
