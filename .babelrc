@@ -11,7 +11,8 @@
     "test": {
       "presets": [
         ["env", { "targets": { "node": "current" }, "useBuiltIns": true }]
-      ]
+      ],
+      "plugins": ["transform-es2015-modules-commonjs"]
     },
     "development": {
       "presets": [

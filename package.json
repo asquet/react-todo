@@ -10,15 +10,18 @@
     "build": "webpack --config webpack.config.js --env.prod=true",
     "lint": "eslint ./src --ext .jsx  -f table || true",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "test": "jest"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
     "babel": "^6.5.2",
     "babel-core": "^6.21.0",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-closure-elimination": "^1.1.14",
     "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.22.0",
     "babel-plugin-transform-function-bind": "^6.8.0",
     "babel-plugin-transform-node-env-inline": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
@@ -34,6 +37,7 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
     "html-webpack-plugin": "^2.24.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^18.0.0",
     "node-sass": "^4.4.0",
     "react-test-renderer": "^15.4.1",
@@ -49,5 +53,19 @@
     "react-dom": "^15.4.1",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    }
   }
 }
