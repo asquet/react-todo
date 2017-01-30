@@ -1,6 +1,6 @@
 import React from 'react';
-import {storiesOf, action, linkTo} from '@kadira/storybook';
-import ItemList from '../../src/components/TodoListWithControls/ItemList';
+import { storiesOf, action } from '@kadira/storybook';
+import ItemList from '../../src/components/TodoList/ItemList';
 
 const item = {
   id: 1,
@@ -21,26 +21,41 @@ const largeTextItem = {
 };
 
 const simpleItems = [
-  item, Object.assign({}, item, {id: 2}), Object.assign({}, item, {id: 3})
+  item, Object.assign({}, item, { id: 2 }), Object.assign({}, item, { id: 3 })
 ];
 
 const diverseItems = [item, mediumTextItem, largeTextItem];
 
-const largeList = [...Array(100).keys()].map( i => Object.assign({}, item, {id: i, text: item.text + ' ' + i}));
+const largeList = [...Array(100).keys()].map(
+  i => Object.assign(
+    {}, item, {
+      id: i,
+      text: item.text + ' ' + i
+    }
+  )
+);
 
 storiesOf('complex.ItemList', module)
-  .addDecorator((story) => (
-    <div style={{textAlign: 'center', padding: 10}}>
-      {story()}
-    </div>
-  ))
-  .add('simple list', () => (
-    <ItemList items={simpleItems} itemUpdate={action('updated item')}></ItemList>
-  ))
-  .add('different items', () => (
-    <ItemList items={diverseItems} itemUpdate={action('updated item')}></ItemList>
-  ))
-  .add('many items', () => (
-    <ItemList items={largeList} itemUpdate={action('updated item')}></ItemList>
-  ));
+  .addDecorator(
+    (story) => (
+      <div style={{ textAlign: 'center', padding: 10 }}>
+        {story()}
+      </div>
+    )
+  )
+  .add(
+    'simple list', () => (
+      <ItemList items={simpleItems} itemUpdate={action('updated item')}></ItemList>
+    )
+  )
+  .add(
+    'different items', () => (
+      <ItemList items={diverseItems} itemUpdate={action('updated item')}></ItemList>
+    )
+  )
+  .add(
+    'many items', () => (
+      <ItemList items={largeList} itemUpdate={action('updated item')}></ItemList>
+    )
+  );
 

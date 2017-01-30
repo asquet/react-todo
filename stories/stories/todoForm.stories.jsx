@@ -5,7 +5,7 @@ import TodoForm from '../../src/components/TodoEditBlock/TodoForm';
 storiesOf('basic.TodoForm', module)
   .addDecorator(
     (story) => (
-      <div style={{ textAlign: 'center', padding: 10 }}>
+      <div style={{ textAlign: 'center', padding: 10 }} className="form-inline">
         {story()}
       </div>
     )
