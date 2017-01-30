@@ -1,5 +1,5 @@
 import React from 'react';
-import './TodoItem.css';
+import './TodoItem.scss';
 import { TodoShape } from '../../model/Todo';
 
 function TodoItem({ item, onChange }) {

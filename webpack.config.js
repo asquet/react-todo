@@ -37,6 +37,10 @@ const BASE = {
           'babel-loader',
         ],
       },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
+      }
     ],
   },
 
