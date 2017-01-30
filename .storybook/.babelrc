@@ -1,0 +1,18 @@
+{
+  "presets": [
+    "react",
+    "latest",
+    [
+      "env",
+      {
+        "useBuiltIns": true,
+        "modules": false
+      }
+    ]
+  ],
+  "plugins": [
+    "react-hot-loader/babel"
+    // Enables React code to work with HMR.
+  ]
+}
+
