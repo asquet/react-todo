@@ -1,0 +1,32 @@
+exports[`test renders without crashing 1`] = `
+<form
+  className="TodoForm"
+  onSubmit={[Function]}>
+  <div
+    className="form-group">
+    <label
+      htmlFor="todoTextInput">
+      Todo text
+    </label>
+     
+    <input
+      className="form-control TodoForm-textInput"
+      id="todoTextInput"
+      onChange={[Function]}
+      type="text"
+      value="" />
+  </div>
+   
+  <button
+    className="btn btn-primary"
+    type="submit">
+    Save
+  </button>
+   
+  <button
+    className="btn btn-default"
+    onClick={[Function]}>
+    Cancel
+  </button>
+</form>
+`;

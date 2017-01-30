@@ -1,0 +1,69 @@
+exports[`test renders without crashing 1`] = `
+<div
+  className="App">
+  <div
+    className="App">
+    <div
+      className="page-header">
+      <h1>
+        Todo app on React
+      </h1>
+    </div>
+    <div>
+      <div
+        className="FilterItem">
+        <label
+          htmlFor="filter-ALL">
+          <input
+            checked={false}
+            id="filter-ALL"
+            onChange={[Function]}
+            type="radio"
+            value="ALL" />
+          All
+        </label>
+      </div>
+      <div
+        className="FilterItem">
+        <label
+          htmlFor="filter-DONE">
+          <input
+            checked={false}
+            id="filter-DONE"
+            onChange={[Function]}
+            type="radio"
+            value="DONE" />
+          Done
+        </label>
+      </div>
+      <div
+        className="FilterItem">
+        <label
+          htmlFor="filter-NOT_DONE">
+          <input
+            checked={true}
+            id="filter-NOT_DONE"
+            onChange={[Function]}
+            type="radio"
+            value="NOT_DONE" />
+          Not done
+        </label>
+      </div>
+    </div>
+    <div />
+    <div
+      className="navbar navbar-default navbar-fixed-bottom">
+      <div
+        className="navbar-form">
+        <div>
+          <button
+            className="btn btn-primary"
+            onClick={[Function]}>
+            Add todo 
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
